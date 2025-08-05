@@ -1,0 +1,1 @@
+# azure-vm-deallocate-self

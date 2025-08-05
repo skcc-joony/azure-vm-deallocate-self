@@ -1,0 +1,24 @@
+﻿<!-- DeallocateSelf.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- ① 반드시 실행-파일(EXE)로 지정 → CS8805 해결 -->
+    <OutputType>Exe</OutputType>     <!-- :contentReference[oaicite:0]{index=0} -->
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+    <!-- ② 완전 단일-파일(Self-contained) 빌드 -->
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+
+    <!-- ③ 기본 using(System, Http 등) 자동 포함 → CS0246, CS0103 해결 -->
+    <ImplicitUsings>enable</ImplicitUsings>          <!-- :contentReference[oaicite:1]{index=1} -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.*" />
+    <PackageReference Include="Azure.ResourceManager.Compute" Version="1.*" />
+  </ItemGroup>
+
+</Project>
